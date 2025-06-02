@@ -1,0 +1,14 @@
+{
+  "name": "webhook-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^2.0.0-rc.4",
+    "exceljs": "^4.3.0",
+    "axios": "^1.6.1"
+  }
+}
