@@ -57,8 +57,9 @@ const normalizePhone = (phone) => {
   if (!phone || typeof phone !== 'string') return '';
   let cleaned = phone.replace(/\D/g, '');
   if (cleaned.startsWith('8') && cleaned.length === 11) cleaned = '7' + cleaned.slice(1);
-  cleaned = cleaned.replace(/^7/, '');
-  return cleaned.length >= 10 ? `+${cleaned}` : '';
+  if (cleaned.length === 10) cleaned = '7' + cleaned;
+  if (cleaned.length === 11 && cleaned.startsWith('7')) return `+${cleaned}`;
+  return '';
 };
 
 module.exports = { processExcel, normalizePhone };
